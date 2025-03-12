@@ -1,0 +1,877 @@
+<style type="text/css">
+  .seawulf {
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    ul li {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0 auto;
+    }
+
+    .header-banner {
+      background-color: #851111;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+    }
+
+    .header-banner h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .info-card {
+      background-color: #f8f9fa;
+      border-left: 4px solid #851111;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+
+    .section h2 {
+      color: #851111;
+      border-left: 4px solid #851111;
+      padding-left: 10px;
+      font-size: 24px;
+    }
+
+    .section h3 {
+      color: #851111;
+      margin-top: 25px;
+      font-size: 20px;
+    }
+
+    .command {
+      font-family: 'Courier New', monospace;
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      border-left: 3px solid #851111;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+
+    .code {
+      font-family: 'Courier New', monospace;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+
+    .command-description {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .login-nodes {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin: 10px 0;
+    }
+
+    .login-node {
+      border-radius: 5px;
+      padding: 8px;
+    }
+
+    .login-node.yellow {
+      background-color: #f6f7e9;
+      border: 1px solid #f0efd1;
+    }
+
+    .login-node.orange {
+      background-color: #f0e5d1;
+      border: 1px solid #f0e4d1;
+    }
+
+    .login-node p {
+      color: #222;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .login-node span {
+      display: block;
+      font-size: 14px;
+      color: #333;
+      margin-top: 5px;
+    }
+
+    .note-box {
+      background-color: #fff8e1;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .warning-box {
+      background-color: #ffebee;
+      border-left: 4px solid #f44336;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #851111;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .software-group {
+      margin-bottom: 30px;
+    }
+
+    .software-card {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .software-card:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .software-card h4 {
+      color: #851111;
+      margin-top: 0;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    .module-command {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 5px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .category-header i {
+      font-size: 24px;
+      margin-right: 10px;
+      color: #851111;
+    }
+
+    .category-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .category-box {
+      background-color: #f8f9fa;
+      border-left: 4px solid #851111;
+      border-radius: 0 5px 5px 0;
+      padding: 10px;
+      margin-bottom: 10px;
+      flex: 0 0 calc(25% - 15px);
+      min-width: 200px;
+      transition: all 0.3s ease;
+    }
+
+    .category-box:hover {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .category-box h4 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #851111;
+    }
+
+    .category-box a {
+      display: block;
+      margin-top: 5px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .category-box a:hover {
+      text-decoration: underline;
+    }
+
+    .toc {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 30px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .toc ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .toc li {
+      margin-bottom: 8px;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: #ff0000;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Grid Layout Style (Left-Aligned with Descriptions) */
+    .grid-layout .category-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      /* Responsive grid */
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .grid-layout .category-box {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid-layout .category-box:hover {
+      transform: translateY(-5px);
+      background-color: #fae0e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .grid-layout h3 {
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+
+    .grid-layout .description {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .grid-layout a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #790000;
+      text-decoration: none;
+    }
+
+    .grid-layout a:hover {
+      text-decoration: underline;
+    }
+
+    /* Line-by-Line Layout Style (Left-Aligned with Descriptions) */
+    .line-layout .category-container {
+      display: block;
+      text-align: left;
+    }
+
+    .line-layout .category-box {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .line-layout .category-box:hover {
+      transform: translateY(-5px);
+      background-color: #fae0e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .line-layout h3 {
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+
+    .line-layout .description {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .line-layout a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #790000;
+      text-decoration: none;
+    }
+
+    .line-layout a:hover {
+      text-decoration: underline;
+    }
+
+
+  }
+</style>
+<div class="seawulf">
+  <div class="header-banner">
+    <h1>SeaWulf Software</h1>
+  </div>
+  <!-- Introduction Section -->
+
+  <div class="section">
+    <h2>Non-Comprehensive List of Software on the SeaWulf Cluster</h2>
+
+    <p>The SeaWulf High Performance Computing cluster provides a wide range of software to support computational
+      research across multiple disciplines. This page documents the major software packages available on the system.</p>
+
+    <div class="info-card">
+      <p><strong>Note:</strong> Software on SeaWulf is managed using the module system. To use any software package, you
+        must first load the appropriate module.</p>
+
+      <div class="command">module avail</div>
+
+      <p class="command-description">Lists all available software modules on the system</p>
+
+      <div class="command">module load &lt;software_name&gt;</div>
+
+      <p class="command-description">Loads a specific software module into your environment</p>
+    </div>
+    <!-- Table of Contents -->
+
+    <div class="toc">
+      <h3>Overview</h3>
+
+      <ul>
+        <li><a href="#compilers">Compilers</a></li>
+        <li><a href="#mpi-implementations">MPI Implementations</a></li>
+        <li><a href="#bioinformatics">Bioinformatics</a></li>
+        <li><a href="#neuroimaging">Neuroimaging</a></li>
+        <li><a href="#molecular-dynamics">Molecular Dynamics</a></li>
+        <li><a href="#mathematics-statistics">Mathematics / Statistics</a></li>
+        <li><a href="#machine-learning-ai">Machine Learning/AI</a></li>
+        <li><a href="#visualization-analysis">Visualization / Analysis</a></li>
+        <li><a href="#data-processing">Data Processing</a></li>
+        <li><a href="#development">Development</a></li>
+        <li><a href="#monitoring-debugging">Monitoring / Debugging</a></li>
+      </ul>
+    </div>
+
+    <!-- Compilers -->
+    <div class="software-group grid-layout">
+      <h2 id="compilers"><a href="software/compilers">Compilers</a></h2>
+      <div class="category-container">
+
+        <div class="category-box">
+          <h4>GCC</h4>
+
+          <p class="description">A popular open-source compiler for C, C++, and other languages.</p>
+          <a href="software/compilers/gcc">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>Intel oneAPI</h4>
+
+          <p class="description">A unified programming model that provides support for Intel CPUs, GPUs, and FPGAs.</p>
+          <a href="software/compilers/intel-oneapi">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>AOCC</h4>
+
+          <p class="description">AMD's Optimizing C Compiler, designed for high performance on AMD architectures.</p>
+          <a href="software/compilers/aocc">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>NVHPC</h4>
+
+          <p class="description">NVIDIA's HPC compiler suite optimized for performance on NVIDIA GPUs.</p>
+          <a href="software/compilers/nvhpc">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>LLVM</h4>
+
+          <p class="description">A collection of modular and reusable compiler and toolchain technologies.</p>
+          <a href="software/compilers/llvm">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MPI Implementations -->
+    <div class="software-group grid-layout">
+      <h2 id="mpi-implementations"><a href="software/mpis">MPI Implementations</a></h2>
+      <div class="category-container">
+
+        <div class="category-box">
+          <h4><a href="softwar/mpis">Intel MPI</a></h4>
+
+          <p class="description"><a href="softwar/mpis">A high-performance, production-quality MPI implementation for
+              Intel architectures.</a></p>
+          <a href="software/mpis/intel-mpi">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>MVAPICH</h4>
+
+          <p class="description">A high-performance MPI implementation based on the Open MPI and MPICH frameworks.</p>
+          <a href="software/mpis/mvapich">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>OpenMPI</h4>
+
+          <p class="description">An open-source MPI implementation that supports a wide range of communication
+            protocols.</p>
+          <a href="software/mpi/openmpi">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bioinformatics -->
+    <div class="software-group grid-layout">
+      <h2 id="bioinformatics"><a href="software/bioinformatics">Bioinformatics</a></h2>
+      <div class="category-container">
+
+        <div class="category-box">
+          <h4>Bowtie2</h4>
+          <p class="description">A fast and memory-efficient tool for aligning sequencing reads to long reference
+            sequences.</p>
+          <a href="software/bioinformatics/bowtie2">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>bamtools</h4>
+          <p class="description">A set of tools for working with BAM (Binary Alignment Map) files.</p>
+          <a href="software/bioinformatics/bamtools">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>bioconvert</h4>
+          <p class="description">A tool for converting bioinformatics data between various formats.</p>
+          <a href="software/bioinformatics/bioconvert">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>diffexp</h4>
+          <p class="description">A tool for differential expression analysis in bioinformatics datasets.</p>
+          <a href="software/bioinformatics/diffexp">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>genome_assembly</h4>
+          <p class="description">Software tools for assembling genomes from short sequencing reads.</p>
+          <a href="software/bioinformatics/genome_assembly">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>genome_annotation</h4>
+          <p class="description">Tools for annotating genomes with genes, regulatory elements, and other features.</p>
+          <a href="software/bioinformatics/genome_annotation">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>GWAS</h4>
+          <p class="description">Tools for performing Genome-Wide Association Studies (GWAS) to identify genetic
+            variants.</p>
+          <a href="software/bioinformatics/gwas">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>hts</h4>
+          <p class="description">A set of tools for working with high-throughput sequencing (HTS) data.</p>
+          <a href="software/bioinformatics/hts">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>metagenomics</h4>
+          <p class="description">Tools for analyzing metagenomic data to study microbial communities.</p>
+          <a href="software/bioinformatics/metagenomics">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>popgen</h4>
+          <p class="description">Tools for population genetics analysis, including allele frequency and genetic
+            diversity.</p>
+          <a href="software/bioinformatics/popgen">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>phylo</h4>
+          <p class="description">Software for constructing and analyzing phylogenetic trees.</p>
+          <a href="software/bioinformatics/phylo">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>singlecell</h4>
+          <p class="description">Tools for analyzing single-cell RNA-seq data and other single-cell omics datasets.</p>
+          <a href="software/bioinformatics/singlecell">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>structural-variant</h4>
+          <p class="description">Tools for detecting and analyzing structural variations in genomes.</p>
+          <a href="software/bioinformatics/structural-variant">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Neuroimaging  -->
+    <div class="software-group grid-layout">
+      <h2 id="neuroimaging"><a href="software/neuroimaging">Neuroimaging</a></h2>
+      <div class="category-container">
+
+        <div class="category-box">
+          <h4>Freesurfer</h4>
+          <p class="description">A suite of software tools for the analysis and visualization of structural and
+            functional neuroimaging data.</p>
+          <a href="software/neuroimaging/freesurfer">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>FSL</h4>
+          <p class="description">FSL is a comprehensive library of analysis tools for FMRI, MRI, and DTI data.</p>
+          <a href="software/neuroimaging/fsl">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>QIIME</h4>
+          <p class="description">QIIME is a powerful software package for analyzing and visualizing microbiome data.</p>
+          <a href="software/neuroimaging/qiime">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Molecular Dynamics  -->
+    <div class="software-group grid-layout">
+      <h2 id="molecular-dynamics"><a href="software/molecular-dynamics">Molecular Dynamics</a></h2>
+      <div class="category-container">
+
+        <div class="category-box">
+          <h4>NAMD</h4>
+          <p class="description">A parallel molecular dynamics code designed for high-performance simulation of large
+            biomolecular systems.</p>
+          <a href="software/molecular-dynamics/namd">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>GROMACS</h4>
+          <p class="description">GROMACS is a versatile and efficient package for performing molecular dynamics
+            simulations.</p>
+          <a href="software/molecular-dynamics/gromacs">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>LAMMPS</h4>
+          <p class="description">LAMMPS is a molecular dynamics simulation software widely used for materials science
+            and molecular simulation.</p>
+          <a href="software/molecular-dynamics/lammps">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>AmberMD</h4>
+          <p class="description">Amber is a suite of biomolecular simulation programs, focusing on molecular dynamics
+            and free energy calculations.</p>
+          <a href="software/molecular-dynamics/ambermd">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mathematics / Statistics  -->
+    <div class="software-group grid-layout">
+      <h2 id="mathematics-statistics"><a href="software/mathematics">Mathematics / Statistics</a></h2>
+      <div class="category-container">
+
+        <div class="category-box">
+          <h4>MATLAB</h4>
+          <p class="description">MATLAB is a high-performance language for technical computing, used in areas such as
+            data analysis and algorithm development.</p>
+          <a href="software/mathematics-statistics/matlab">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>R</h4>
+          <p class="description">R is a programming language and environment for statistical computing and graphics.</p>
+          <a href="software/mathematics-statistics/r">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>Mathematica</h4>
+          <p class="description">Mathematica is a computational software system used in scientific, engineering,
+            mathematical, and computing fields.</p>
+          <a href="software/mathematics-statistics/mathematica">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>MPFR</h4>
+          <p class="description">MPFR is a C library for multiple-precision floating-point computation with correct
+            rounding.</p>
+          <a href="software/mathematics-statistics/mpfr">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>PETSc</h4>
+          <p class="description">PETSc is a suite of data structures and routines for the scalable solution of
+            scientific problems modeled by partial differential equations.</p>
+          <a href="software/mathematics-statistics/petsc">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>VASP</h4>
+          <p class="description">VASP is a software package for atomic scale materials modeling, primarily used for
+            quantum mechanical simulations.</p>
+          <a href="software/mathematics-statistics/vasp">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Machine Learning / AI  -->
+    <div class="software-group grid-layout">
+      <h2 id="machine-learning-ai"><a href="software/ml-ai">Machine Learning / AI</a></h2>
+      <div class="category-container">
+
+        <div class="category-box">
+          <h4>Python</h4>
+          <p class="description">Python is a high-level programming language widely used for general-purpose programming
+            and AI applications.</p>
+          <a href="software/ml-ai/python">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>TensorFlow</h4>
+          <p class="description">TensorFlow is an open-source machine learning library developed by Google for deep
+            learning and AI applications.</p>
+          <a href="software/ml-ai/tensorflow">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>PyTorch</h4>
+          <p class="description">PyTorch is an open-source machine learning library based on the Torch library, used for
+            applications such as computer vision and NLP.</p>
+          <a href="software/ml-ai/pytorch">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>Scikit-learn</h4>
+          <p class="description">Scikit-learn is a Python module for machine learning built on top of NumPy, SciPy, and
+            matplotlib.</p>
+          <a href="software/ml-ai/scikit-learn">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>Ollama</h4>
+          <p class="description">Ollama is an AI tool for building and deploying natural language processing models.</p>
+          <a href="software/ml-ai/ollama">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visualization / Analysis  -->
+    <div class="software-group grid-layout">
+      <h2 id="visualization-analysis"><a href="software/visualization">Visualization and Analysis</a></h2>
+      <div class="category-container">
+
+        <div class="category-box">
+          <h4>ParaView</h4>
+          <p class="description">ParaView is an open-source data analysis and visualization application for scientific
+            data.</p>
+          <a href="software/visualization-analysis/paraview">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>VMD</h4>
+          <p class="description">VMD is a molecular visualization program for displaying, animating, and analyzing large
+            biomolecular systems.</p>
+          <a href="software/visualization-analysis/vmd">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>Matplotlib</h4>
+          <p class="description">Matplotlib is a Python plotting library for creating static, animated, and interactive
+            visualizations.</p>
+          <a href="software/visualization-analysis/matplotlib">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>Jupyter Notebook</h4>
+          <p class="description">Jupyter Notebook is a web-based interactive computing environment that supports various
+            programming languages, especially Python.</p>
+          <a href="software/visualization-analysis/jupyter-notebook">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Processing  -->
+    <div class="software-group grid-layout">
+      <h2 id="data-processing"><a href="software/data-processing">Data Processing</a></h2>
+      <div class="category-container">
+
+        <div class="category-box">
+          <h4>HDF5</h4>
+          <p class="description">HDF5 is a file format and set of tools for managing large and complex data sets.</p>
+          <a href="software/data-processing/hdf5">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>NetCDF</h4>
+          <p class="description">NetCDF is a set of software libraries and machine-independent data formats that support
+            the creation, access, and sharing of array-oriented data.</p>
+          <a href="software/data-processing/netcdf">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>FFTW3</h4>
+          <p class="description">FFTW3 is a C library for computing discrete Fourier transforms (DFTs) in one or more
+            dimensions.</p>
+          <a href="software/data-processing/fftw3">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>OpenBLAS</h4>
+          <p class="description">OpenBLAS is an open-source implementation of the BLAS library for linear algebra
+            operations.</p>
+          <a href="software/data-processing/openblas">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>Intel MKL</h4>
+          <p class="description">Intel MKL (Math Kernel Library) is a set of highly optimized routines for scientific,
+            engineering, and financial applications.</p>
+          <a href="software/data-processing/intel-mkl">Learn More</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Development  -->
+    <div class="software-group grid-layout">
+      <h2 id="development"><a href="software/development">Development</a></h2>
+      <div class="category-container">
+
+        <div class="category-box">
+          <h4>Anaconda</h4>
+          <p class="description">Anaconda is a free and open-source distribution of Python and R programming languages
+            for scientific computing.</p>
+          <a href="software/development/anaconda">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>Git</h4>
+          <p class="description">Git is a free and open-source version control system for tracking changes in source
+            code during software development.</p>
+          <a href="software/development/git">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>CMake</h4>
+          <p class="description">CMake is an open-source build system generator for managing the build process of
+            software projects.</p>
+          <a href="software/development/cmake">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>Singularity</h4>
+          <p class="description">Singularity is an open-source container platform designed to execute applications in
+            isolated environments.</p>
+          <a href="software/development/singularity">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>GNU Parallel</h4>
+          <p class="description">GNU Parallel is a shell tool for executing jobs in parallel using one or more
+            computers.</p>
+          <a href="software/development/gnu-parallel">Learn More</a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Monitoring / Debugging -->
+    <div class="software-group grid-layout">
+      <h2 id="monitoring-debugging"><a href="software/monitoring-debugging">Monitoring / Debugging</a></h2>
+      <div class="category-container">
+
+        <div class="category-box">
+          <h4>Valgrind</h4>
+          <p class="description">Valgrind is an instrumentation framework for building dynamic analysis tools, often
+            used for debugging and profiling.</p>
+          <a href="software/monitoring-debugging/valgrind">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>Linaro Forge</h4>
+          <p class="description">Linaro Forge is a web-based platform providing tools for optimizing and debugging
+            ARM-based systems.</p>
+          <a href="software/monitoring-debugging/linaro-forge">Learn More</a>
+        </div>
+
+        <div class="category-box">
+          <h4>htop</h4>
+          <p class="description">htop is an interactive process viewer for Unix systems, providing a more user-friendly
+            interface than the traditional top command.</p>
+          <a href="software/monitoring-debugging/htop">Learn More</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
