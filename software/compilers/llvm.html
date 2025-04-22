@@ -1,0 +1,205 @@
+<style type="text/css">.seawulf {
+
+  ul {
+      list-style-type: disc;
+      margin-left: 20px;
+  }
+
+  ul li {
+      font-size: 1rem;
+      margin-bottom: 8px;
+  }
+
+
+  body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+
+      margin: 0 auto;
+
+  }
+
+  .header-banner {
+      background-color: #851111;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+  }
+
+  .header-banner h1 {
+      margin: 0;
+      font-size: 28px;
+  }
+
+  .info-card {
+      background-color: #f8f9fa;
+      border-left: 4px solid #851111;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 0 5px 5px 0;
+  }
+
+  .section {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+  }
+
+  .section h2 {
+      color: #851111;
+      border-left: 4px solid #851111;
+      padding-left: 10px;
+      font-size: 24px;
+  }
+
+  .section h3 {
+      color: #851111;
+      margin-top: 25px;
+      font-size: 20px;
+  }
+
+  .command {
+      font-family: 'Courier New', monospace;
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      border-left: 3px solid #851111;
+      overflow-x: auto;
+      margin: 10px 0;
+  }
+
+  .code {
+      font-family: 'Courier New', monospace;
+      overflow-x: auto;
+      margin: 10px 0;
+  }
+
+  .command-description {
+      margin-top: 10px;
+      margin-bottom: 20px;
+  }
+
+  .login-nodes {
+      display: flex;
+      flex-direction: column;
+
+      gap: 5px;
+      margin: 10px 0;
+  }
+
+  .login-node {
+      border-radius: 5px;
+      padding: 8px;
+
+  }
+
+  .login-node.yellow {
+      background-color: #f6f7e9;
+      border: 1px solid #f0efd1;
+
+  }
+
+  .login-node.orange {
+      background-color: #f0e5d1;
+      border: 1px solid #f0e4d1;
+
+  }
+
+  .login-node p {
+      color: #222;
+      margin: 0;
+      font-weight: bold;
+  }
+
+  .login-node span {
+      display: block;
+      font-size: 14px;
+      color: #333;
+      margin-top: 5px;
+  }
+
+  .note-box {
+      background-color: #fff8e1;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+  }
+
+  .warning-box {
+      background-color: #ffebee;
+      border-left: 4px solid #f44336;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+  }
+
+  table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+  }
+
+  table,
+  th,
+  td {
+      border: 1px solid #ddd;
+  }
+
+  th,
+  td {
+      padding: 12px;
+      text-align: left;
+  }
+
+  th {
+      background-color: #851111;
+      color: white;
+  }
+
+  tr:nth-child(even) {
+      background-color: #f2f2f2;
+  }
+}
+</style>
+<div class="seawulf">
+<div class="header-banner">
+<h1>LLVM on SeaWulf</h1>
+</div>
+<!-- Info Card -->
+
+<div class="info-card">
+<p><strong>This KB Article References:</strong> High Performance Computing<br />
+<strong>This Information is Intended for:</strong> Instructors, Researchers, Staff, Students<br />
+<strong>Created:</strong> 03/27/2025<br />
+<strong>Last Updated:</strong> 03/27/2025</p>
+</div>
+<!-- Introduction Section -->
+
+<div class="section">
+<h2>Introduction to LLVM Compilers on SeaWulf</h2>
+
+<p>The LLVM Project is a collection of modular and reusable compiler and toolchain technologies.</p>
+
+</div>
+<!-- Available NVHPC Versions Section -->
+
+<div class="section">
+<h2>Available LLVM Versions</h2>
+
+<p>SeaWulf currently provides the following LLVM versions:</p>
+
+<ul>
+<li><strong>llvm/3.9.1</strong></li>
+<li><strong>llvm/7.1.0</strong></li>
+<li><strong>llvm/10.0.1</strong></li>
+</ul>
+
+<p>To load a specific LLVM version, use the module command:</p>
+
+<div class="command">module load llvm/10.0.1</div>
+
+</div>
+</div>

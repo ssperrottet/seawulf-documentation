@@ -1,0 +1,433 @@
+<style type="text/css">.seawulf {
+
+  ul {
+      list-style-type: disc;
+      margin-left: 20px;
+  }
+
+  ul li {
+      font-size: 1rem;
+      margin-bottom: 8px;
+  }
+
+
+  body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+
+      margin: 0 auto;
+
+  }
+
+  .header-banner {
+      background-color: #851111;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+  }
+
+  .header-banner h1 {
+      margin: 0;
+      font-size: 28px;
+  }
+
+  .info-card {
+      background-color: #f8f9fa;
+      border-left: 4px solid #851111;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 0 5px 5px 0;
+  }
+
+  .section {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+  }
+
+  .section h2 {
+      color: #851111;
+      border-left: 4px solid #851111;
+      padding-left: 10px;
+      font-size: 24px;
+  }
+
+  .section h3 {
+      color: #851111;
+      margin-top: 25px;
+      font-size: 20px;
+  }
+
+  .command {
+      font-family: 'Courier New', monospace;
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      border-left: 3px solid #851111;
+      overflow-x: auto;
+      margin: 10px 0;
+  }
+
+  .code {
+      font-family: 'Courier New', monospace;
+      overflow-x: auto;
+      margin: 10px 0;
+  }
+
+  .command-description {
+      margin-top: 10px;
+      margin-bottom: 20px;
+  }
+
+  .login-nodes {
+      display: flex;
+      flex-direction: column;
+
+      gap: 5px;
+      margin: 10px 0;
+  }
+
+  .login-node {
+      border-radius: 5px;
+      padding: 8px;
+
+  }
+
+  .login-node.yellow {
+      background-color: #f6f7e9;
+      border: 1px solid #f0efd1;
+
+  }
+
+  .login-node.orange {
+      background-color: #f0e5d1;
+      border: 1px solid #f0e4d1;
+
+  }
+
+  .login-node p {
+      color: #222;
+      margin: 0;
+      font-weight: bold;
+  }
+
+  .login-node span {
+      display: block;
+      font-size: 14px;
+      color: #333;
+      margin-top: 5px;
+  }
+
+  .note-box {
+      background-color: #fff8e1;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+  }
+
+  .warning-box {
+      background-color: #ffebee;
+      border-left: 4px solid #f44336;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+  }
+
+  table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+  }
+
+  table,
+  th,
+  td {
+      border: 1px solid #ddd;
+  }
+
+  th,
+  td {
+      padding: 12px;
+      text-align: left;
+  }
+
+  th {
+      background-color: #851111;
+      color: white;
+  }
+
+  tr:nth-child(even) {
+      background-color: #f2f2f2;
+  }
+}
+</style>
+<div class="seawulf">
+<div class="header-banner">
+<h1>NVIDIA HPC SDK on SeaWulf</h1>
+</div>
+<!-- Info Card -->
+
+<div class="info-card">
+<p><strong>This KB Article References:</strong> High Performance Computing<br />
+<strong>This Information is Intended for:</strong> Instructors, Researchers, Staff, Students<br />
+<strong>Created:</strong> 03/07/2025<br />
+<strong>Last Updated:</strong> 03/07/2025</p>
+</div>
+<!-- Introduction Section -->
+
+<div class="section">
+<h2>Introduction to NVIDIA HPC SDK on SeaWulf</h2>
+
+<p>The NVIDIA HPC SDK (NVHPC) is a comprehensive suite of compilers, libraries, and tools designed specifically for high-performance computing on NVIDIA GPU-accelerated systems. This toolkit provides optimized solutions for developing applications that can effectively leverage the computational power of NVIDIA GPUs in the SeaWulf computing environment.</p>
+
+<p>NVHPC is built on NVIDIA's industry-leading compiler technology and includes support for C, C++, and Fortran programming languages. It offers specialized optimizations for GPU acceleration, parallel computing, and scientific computing, making it an essential tool for researchers and developers working on computationally intensive applications on GPU nodes in the SeaWulf cluster.</p>
+</div>
+<!-- Available NVHPC Versions Section -->
+
+<div class="section">
+<h2>Available NVHPC Versions</h2>
+
+<p>SeaWulf currently provides the following NVHPC versions:</p>
+
+<ul>
+<li><strong>nvidia/nvhpc/21.5</strong> - Compatible with CUDA 11.x</li>
+<li><strong>nvidia/nvhpc/21.7</strong> - Compatible with CUDA 11.x</li>
+<li><strong>nvidia/nvhpc/23.7</strong> - Compatible with CUDA 11.x and 12.x</li>
+<li><strong>nvidia/nvhpc/23.11</strong> - Compatible with CUDA 12.x</li>
+<li><strong>nvidia/nvhpc/24.11</strong> - Latest version (recommended)</li>
+</ul>
+
+<p>To load a specific NVHPC version, use the module command:</p>
+
+<div class="command">module load nvidia/nvhpc/24.11</div>
+
+<div class="note-box">
+<p><strong>Note:</strong> There are also specialized versions of NVHPC with different MPI implementations or without MPI (nompi). Choose the appropriate module based on your parallel programming needs.</p>
+</div>
+</div>
+<!-- NVHPC Variants Section -->
+
+<div class="section">
+<h2>NVHPC Variants</h2>
+
+<p>In addition to the standard NVHPC modules, SeaWulf offers several specialized variants:</p>
+
+<ul>
+<li><strong>nvidia/nvhpc-nompi</strong> - NVHPC without MPI support</li>
+<li><strong>nvidia/nvhpc-hpcx</strong> - NVHPC with Mellanox HPC-X MPI</li>
+<li><strong>nvidia/nvhpc-openmpi3</strong> - NVHPC with OpenMPI 3.x</li>
+<li><strong>nvidia/nvhpc-byo-compiler</strong> - "Bring Your Own Compiler" variant</li>
+<li><strong>nvidia/nvhpc-hpcx-cuda11</strong> - Specific for CUDA 11.x compatibility</li>
+<li><strong>nvidia/nvhpc-hpcx-cuda12</strong> - Specific for CUDA 12.x compatibility</li>
+</ul>
+
+<p>Example usage:</p>
+
+<div class="command">module load nvidia/nvhpc-hpcx-cuda12/23.11</div>
+
+<div class="warning-box">
+<p><strong>Important:</strong> Ensure the NVHPC variant you choose is compatible with your CUDA requirements and parallel programming model.</p>
+</div>
+</div>
+<!-- NVHPC Compilers Section -->
+
+<div class="section">
+<h2>NVHPC Compilers</h2>
+
+<p>The NVIDIA HPC SDK provides several compilers optimized for NVIDIA GPUs:</p>
+
+<ul>
+<li><strong>C Compiler:</strong> nvc</li>
+<li><strong>C++ Compiler:</strong> nvc++</li>
+<li><strong>Fortran Compiler:</strong> nvfortran</li>
+</ul>
+
+<p>Example usage:</p>
+
+<div class="command">nvc myprogram.c -o myprogram # Compile a C program</div>
+
+<div class="command">nvc++ myprogram.cpp -o myprogram # Compile a C++ program</div>
+
+<div class="command">nvfortran myprogram.f90 -o myprogram # Compile a Fortran program</div>
+</div>
+<!-- GPU Acceleration Section -->
+
+<div class="section">
+<h2>GPU Acceleration with NVHPC</h2>
+
+<p>NVHPC provides multiple programming models for GPU acceleration:</p>
+
+<ul>
+<li><strong>OpenACC:</strong> A directive-based approach for GPU programming</li>
+<li><strong>CUDA:</strong> NVIDIA's parallel computing platform</li>
+<li><strong>OpenMP:</strong> Standard API for parallel programming with GPU target support</li>
+<li><strong>Standard Language Features:</strong> C++17 parallel algorithms, Fortran DO CONCURRENT</li>
+</ul>
+
+<p>Example OpenACC compilation:</p>
+
+<div class="command">nvc -acc -Minfo=accel myprogram.c -o myprogram</div>
+
+<p>Example CUDA compilation:</p>
+
+<div class="command">nvc -cuda -Minfo=accel mycudaprogram.cu -o mycudaprogram</div>
+
+<div class="note-box">
+<p><strong>Note:</strong> The <code>-Minfo=accel</code> flag provides detailed information about the accelerator code generated by the compiler.</p>
+</div>
+</div>
+<!-- MPI Integration Section -->
+
+<div class="section">
+<h2>MPI Integration with NVHPC</h2>
+
+<p>For parallel programming with MPI, NVHPC provides compiler wrappers that automatically include the necessary MPI libraries and flags:</p>
+
+<h3>MPI Wrappers:</h3>
+
+<ul>
+<li><strong>mpicc:</strong> for C programs</li>
+<li><strong>mpicxx / mpic++:</strong> for C++ programs</li>
+<li><strong>mpifort:</strong> for Fortran programs</li>
+</ul>
+
+<p>Example SLURM script with NVHPC and MPI:</p>
+
+<div class="command">#!/bin/bash<br />
+#SBATCH --job-name=nvhpc_test<br />
+#SBATCH --output=nvhpc_test.out<br />
+#SBATCH -p a100<br />
+#SBATCH --nodes=1<br />
+#SBATCH --ntasks-per-node=2<br />
+#SBATCH --gres=gpu:2<br />
+#SBATCH --time=01:00:00<br />
+<br />
+# Load necessary modules<br />
+module load nvidia/nvhpc-hpcx-cuda12/23.11<br />
+<br />
+# Compile and run your code<br />
+mpicc -acc=gpu -Minfo=accel mpi_gpu_example.c -o mpi_gpu_example<br />
+mpirun -np $SLURM_NTASKS ./mpi_gpu_example</div>
+</div>
+<!-- Optimization Tips Section -->
+
+<div class="section">
+<h2>Optimization Tips for NVHPC</h2>
+
+<p>To maximize performance with NVHPC on GPU nodes in SeaWulf, consider the following optimization strategies:</p>
+
+<ul>
+<li><strong>Basic Optimization Flags:</strong>
+
+<div class="command"># High optimization level<br />
+nvc -O3 myprogram.c -o myprogram</div>
+</li>
+<li><strong>GPU Targeting:</strong>
+<div class="command"># Target specific GPU architecture<br />
+nvc -acc=gpu -gpu=cc80 myprogram.c -o myprogram</div>
+
+<div class="note-box">
+<p><strong>Note:</strong> Common compute capability values include cc70 (Volta), cc75 (Turing), cc80 (Ampere), and cc90 (Hopper). Check your GPU architecture and use the appropriate value.</p>
+</div>
+</li>
+<li><strong>Memory Usage Optimization:</strong>
+<div class="command"># Managed memory model for simplicity<br />
+nvc -acc=gpu -gpu=managed myprogram.c -o myprogram</div>
+</li>
+<li><strong>Profiling Support:</strong>
+<div class="command"># Enable profiling with NVIDIA tools<br />
+nvc -acc=gpu -gpu=lineinfo myprogram.c -o myprogram</div>
+</li>
+<li><strong>Math Library Optimization:</strong>
+<div class="command"># Link with NVIDIA math libraries<br />
+nvc -acc=gpu myprogram.c -o myprogram -lcublas -lcufft</div>
+</li>
+</ul>
+</div>
+<!-- NVHPC Tools Section -->
+
+<div class="section">
+<h2>NVHPC Tools</h2>
+
+<p>The NVIDIA HPC SDK includes several tools to help optimize and debug your GPU-accelerated applications:</p>
+
+<ul>
+<li><strong>NVIDIA Nsight Systems:</strong> System-wide performance analysis tool</li>
+<li><strong>NVIDIA Nsight Compute:</strong> Interactive kernel profiler</li>
+<li><strong>NVIDIA Debugger (cuda-gdb):</strong> For debugging GPU applications</li>
+<li><strong>NVTOP:</strong> Interactive GPU process monitor (available as separate modules: nvtop/3.0.1 and nvtop/3.1.0)</li>
+</ul>
+
+<p>Example usage:</p>
+
+<div class="command">nsys profile ./myprogram # Profile application with Nsight Systems</div>
+
+<div class="command">module load nvtop/3.1.0<br />
+nvtop # Monitor GPU usage interactively</div>
+</div>
+<!-- Version Comparison Section -->
+
+<div class="section">
+<h2>NVHPC Version Comparison</h2>
+
+<table>
+<tbody>
+  <tr>
+    <th>Feature</th>
+    <th>NVHPC 21.x</th>
+    <th>NVHPC 23.x</th>
+    <th>NVHPC 24.11</th>
+  </tr>
+  <tr>
+    <td>Primary CUDA Support</td>
+    <td>CUDA 11.x</td>
+    <td>CUDA 11.x, 12.x</td>
+    <td>CUDA 12.x</td>
+  </tr>
+  <tr>
+    <td>GPU Architecture Support</td>
+    <td>Up to Ampere</td>
+    <td>Up to Hopper</td>
+    <td>Up to Hopper</td>
+  </tr>
+  <tr>
+    <td>C++ Standard Support</td>
+    <td>C++17</td>
+    <td>C++17/20</td>
+    <td>C++20</td>
+  </tr>
+  <tr>
+    <td>Fortran Standard Support</td>
+    <td>Fortran 2003/2008</td>
+    <td>Fortran 2008/2018</td>
+    <td>Fortran 2018</td>
+  </tr>
+  <tr>
+    <td>Recommended for</td>
+    <td>Legacy code</td>
+    <td>General use</td>
+    <td>New projects, best performance</td>
+  </tr>
+</tbody>
+</table>
+</div>
+<!-- Resources and Documentation Section -->
+
+<div class="section">
+<h2>Resources and Documentation</h2>
+
+<p>For detailed information on NVIDIA HPC SDK features, optimization techniques, and programming guides, refer to the following resources:</p>
+
+<ul>
+<li><a href="https://docs.nvidia.com/hpc-sdk/">NVIDIA HPC SDK Documentation</a></li>
+<li><a href="https://docs.nvidia.com/hpc-sdk/compilers/index.html">NVIDIA HPC Compiler Documentation</a></li>
+<li><a href="https://developer.nvidia.com/openacc">OpenACC Programming Guide</a></li>
+<li><a href="https://developer.nvidia.com/cuda-zone">CUDA Programming Resources</a></li>
+</ul>
+
+<p>For SeaWulf-specific questions and support with NVIDIA HPC SDK, please contact the SeaWulf support team.</p>
+</div>
+</div>

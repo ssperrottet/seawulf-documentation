@@ -1,0 +1,390 @@
+<style type="text/css">
+  h1.page-header {
+    display: none;
+  }
+
+  .seawulf {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0 auto;
+  }
+
+  .header-banner {
+    background-color: #851111;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+
+  .header-banner h1 {
+    margin: 0;
+    font-size: 28px;
+  }
+
+  .info-card {
+    background-color: #f8f9fa;
+    border-left: 4px solid #851111;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0 5px 5px 0;
+  }
+
+  .section {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+  }
+
+  .section h2 {
+    color: #851111;
+    border-left: 4px solid #851111;
+    padding-left: 10px;
+    font-size: 24px;
+  }
+
+  .section h3 {
+    color: #851111;
+    margin-top: 25px;
+    font-size: 20px;
+  }
+
+  .note-box {
+    background-color: #fff8e1;
+    border-left: 4px solid #ffc107;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 0 5px 5px 0;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    overflow-x: auto;
+    display: block;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid #ddd;
+  }
+
+  th,
+  td {
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  th {
+    background-color: #851111;
+    color: white;
+    line-height: 1.2;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+</style>
+<div class="seawulf">
+  <div class="header-banner">
+    <h1>Understanding SeaWulf</h1>
+  </div>
+
+  <div class="section">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Node type</th>
+          <th>Node Count</th>
+          <th>Core Manufacturer</th>
+          <th>Core Type</th>
+          <th>Cores per node</th>
+          <th>Total Cores</th>
+          <th>Memory¹</th>
+          <th>GPU</th>
+          <th>GPUs per node</th>
+          <th>Total GPUs</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>login2</td>
+          <td>login</td>
+          <td>1</td>
+          <td>Intel</td>
+          <td>Haswell</td>
+          <td>20</td>
+          <td>20</td>
+          <td>256 GB</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>login1</td>
+          <td>login</td>
+          <td>1</td>
+          <td>Intel</td>
+          <td>Haswell</td>
+          <td>24</td>
+          <td>24</td>
+          <td>256 GB</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>sn[001-056]</td>
+          <td>CPU compute</td>
+          <td>156</td>
+          <td>Intel</td>
+          <td>Haswell</td>
+          <td>28</td>
+          <td>4,368</td>
+          <td>128 GB</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>cn-nvidia</td>
+          <td>GPU compute</td>
+          <td>1</td>
+          <td>Intel</td>
+          <td>Haswell</td>
+          <td>12</td>
+          <td>12</td>
+          <td>64 GB</td>
+          <td>Nvidia P100</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>sn-nvda[1,2]</td>
+          <td>GPU compute</td>
+          <td>2</td>
+          <td>Intel</td>
+          <td>Haswell</td>
+          <td>28</td>
+          <td>56</td>
+          <td>128 GB</td>
+          <td>Nvidia V100 32GB</td>
+          <td>2</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>sn-nvda[3-8]</td>
+          <td>GPU compute</td>
+          <td>6</td>
+          <td>Intel</td>
+          <td>Haswell</td>
+          <td>28</td>
+          <td>168</td>
+          <td>128 GB</td>
+          <td>Nvidia K80</td>
+          <td>4</td>
+          <td>24</td>
+        </tr>
+        <tr>
+          <th colspan="11" style=" text-align: center;">&nbsp;</th>
+        </tr>
+        <tr>
+          <td>milan[1,2]</td>
+          <td>login</td>
+          <td>2</td>
+          <td>AMD</td>
+          <td>Milan</td>
+          <td>64</td>
+          <td>128</td>
+          <td>512 GB</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>xeonmax</td>
+          <td>login</td>
+          <td>1</td>
+          <td>Intel</td>
+          <td>Sapphire Rapids</td>
+          <td>96</td>
+          <td>96</td>
+          <td>512 GB</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>dg[001-48]</td>
+          <td>CPU compute</td>
+          <td>48</td>
+          <td>AMD</td>
+          <td>Milan</td>
+          <td>96</td>
+          <td>4,608</td>
+          <td>256 GB</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>xm[001-044,049-094]</td>
+          <td>CPU compute</td>
+          <td>90</td>
+          <td>Intel</td>
+          <td>Sapphire Rapids</td>
+          <td>96</td>
+          <td>8,640</td>
+          <td>128 GB HBM + 256 GB DDR5</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>xm[045-048]</td>
+          <td>CPU compute</td>
+          <td>4</td>
+          <td>Intel</td>
+          <td>Sapphire Rapids</td>
+          <td>96</td>
+          <td>384</td>
+          <td>1 TB DDR5</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>dn[001-064]</td>
+          <td>CPU compute</td>
+          <td>64</td>
+          <td>Intel</td>
+          <td>Skylake</td>
+          <td>40</td>
+          <td>2,560</td>
+          <td>192 GB</td>
+          <td>N/A</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>a100-[01-11]</td>
+          <td>GPU compute</td>
+          <td>11</td>
+          <td>Intel</td>
+          <td>Ice Lake</td>
+          <td>64</td>
+          <td>704</td>
+          <td>256 GB</td>
+          <td>Nvidia A100 80GB</td>
+          <td>4</td>
+          <td>44</td>
+        </tr>
+        <tr>
+          <th colspan="11" style="text-align: center;">&nbsp;</th>
+        </tr>
+        <tr>
+          <td>dg-mem</td>
+          <td>large memory</td>
+          <td>1</td>
+          <td>Intel</td>
+          <td>Cooper Lake</td>
+          <td>96</td>
+          <td>96</td>
+          <td>3 TB</td>
+          <td>AMD MI210</td>
+          <td>2</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td>cn-mem</td>
+          <td>large memory</td>
+          <td>1</td>
+          <td>Intel</td>
+          <td>Haswell</td>
+          <td>72</td>
+          <td>72</td>
+          <td>3 TB</td>
+          <td>Nvidia V100 16GB</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      <p>¹A small subset of node memory is reserved for the OS and file system and is not available for user
+        applications.</p>
+    </div>
+
+    <h2>Understanding SeaWulf's Hardware</h2>
+
+    <p>The cluster consists of over 400 nodes and approximately 23,000 cores, delivering a peak performance of around
+      1.86 PFLOP/s for research computations. The nodes are interconnected via high-speed InfiniBand® (IB) networks by
+      Nvidia®, enabling data transfer speeds ranging from 5 to 50 gigabytes per second.</p>
+
+    <h3>Computing Nodes</h3>
+
+    <ul>
+      <li><strong>164 compute nodes from Penguin Computing</strong>: Each equipped with two Intel Xeon E5-2683v3 CPUs
+        ("Haswell"), offering 14 cores per CPU at a base speed of 2.0 GHz on an FDR InfiniBand network.
+
+        <ul>
+          <li>8 of these nodes contain GPUs:</li>
+          <li>28 Nvidia Tesla K80 24GB Accelerators, totaling 159,744 CUDA cores (64x GK210 cores).</li>
+          <li>One node with 2 Tesla P100 GPUs.</li>
+          <li>One node with 2 Tesla V100 GPUs.</li>
+          <li>Each node has 128 GB of DDR4 RAM (20 GB reserved for the system) with a combined memory bandwidth of
+            133.25 GB/s.</li>
+        </ul>
+      </li>
+      <li><strong>64 compute nodes from Dell</strong>: Each with two Intel Xeon Gold 6148 CPUs ("Skylake"), offering 20
+        cores per CPU at a base speed of 2.4 GHz and 192 GB of RAM, connected via an FDR InfiniBand network.</li>
+      <li><strong>48 compute nodes from HPE</strong>: Each equipped with two AMD 7643 CPUs ("Milan"), featuring 48 cores
+        per CPU at a base speed of 3.2 GHz and 256 GB of RAM, connected via an HDR100 InfiniBand network.</li>
+      <li><strong>11 GPU compute nodes from Dell</strong>: Each featuring 4x Nvidia A100 80GB GPUs and two Intel 6338
+        CPUs ("Ice Lake") with 32 cores per CPU at a base speed of 2.0 GHz and 256 GB of RAM, connected via an HDR100
+        InfiniBand network.</li>
+      <li><strong>94 compute nodes from HPE</strong>: Each equipped with two Intel Xeon Max 9468 CPUs ("Sapphire Rapids
+        w/ HBM"), offering 48 cores per CPU at a base speed of 2.6 GHz, with 256 GB of DDR5 RAM plus 128 GB of HBM2 RAM,
+        connected via an NDR InfiniBand network.</li>
+    </ul>
+
+    <h3>Large Memory Nodes</h3>
+
+    <p>SeaWulf also features two large memory nodes with 3 TB of RAM:</p>
+
+    <ul>
+      <li><strong>DDR4 System</strong>: 4 Intel E7-8870v3 processors, each with 18 cores at 2.1 GHz, for a total of 72
+        cores and 144 threads (via Hyper-Threading).</li>
+      <li><strong>DDR5 System</strong>: 4 Intel 8360H processors, each with 24 cores at 3.0 GHz, for a total of 96
+        cores.</li>
+    </ul>
+
+    <h3>Storage System</h3>
+
+    <p>SeaWulf's storage infrastructure is built on a GPFS storage solution, offering a total capacity of approximately
+      4 petabytes of SAS spinning disk and 50 terabytes of SSD. The SSD component provides exceptional performance,
+      capable of sustaining over 4 million 4K random read IOPS and achieving sequential read speeds exceeding 36
+      gigabytes per second.</p>
+
+    <h3>Connectivity</h3>
+
+    <p>SeaWulf features five login nodes for user access and task management. The nodes are interconnected via
+      high-speed InfiniBand® networks by Nvidia®, supporting data transfer speeds of 5-50 GB/s.</p>
+
+    <h3>Performance Calculation</h3>
+
+    <ul>
+      <li><strong>Peak Performance</strong>: Cores per node × number of nodes × base clock per core × double precision
+        FLOPS per cycle + Nvidia GPU Teraflops.</li>
+      <li><strong>Memory Bandwidth Calculation</strong>: Memory Clock (1,066 MHz) × 2 (DDR) × 64-bit Memory Bus width ×
+        4 Memory interfaces per CPU (Quad-channel) × 2 CPUs per node / 8 bits per byte.</li>
+    </ul>
+  </div>
+</div>

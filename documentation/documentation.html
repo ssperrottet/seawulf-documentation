@@ -1,0 +1,1019 @@
+<style type="text/css">
+  .seawulf {
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    ul li {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0 auto;
+    }
+
+    .header-banner {
+      background-color: #851111;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+    }
+
+    .header-banner h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .info-card {
+      background-color: #f8f9fa;
+      border-left: 4px solid #851111;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+
+    h2 {
+      color: #851111;
+      border-left: 4px solid #851111;
+      padding-left: 10px;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .section h3 {
+      color: #851111;
+      margin-top: 25px;
+      font-size: 20px;
+    }
+
+    .command {
+      font-family: 'Courier New', monospace;
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      border-left: 3px solid #851111;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+
+    .code {
+      font-family: 'Courier New', monospace;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+
+    .command-description {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .login-nodes {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin: 10px 0;
+    }
+
+    .login-node {
+      border-radius: 5px;
+      padding: 8px;
+    }
+
+    .login-node.yellow {
+      background-color: #f6f7e9;
+      border: 1px solid #f0efd1;
+    }
+
+    .login-node.orange {
+      background-color: #f0e5d1;
+      border: 1px solid #f0e4d1;
+    }
+
+    .login-node p {
+      color: #222;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .login-node span {
+      display: block;
+      font-size: 14px;
+      color: #333;
+      margin-top: 5px;
+    }
+
+    .note-box {
+      background-color: #fff8e1;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .warning-box {
+      background-color: #ffebee;
+      border-left: 4px solid #f44336;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #851111;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .software-group {
+      margin-bottom: 30px;
+    }
+
+    .software-card {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .software-card:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .software-card h4 {
+      color: #851111;
+      margin-top: 0;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    .module-command {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 5px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .category-header i {
+      font-size: 24px;
+      margin-right: 10px;
+      color: #851111;
+    }
+
+    .category-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .category-box {
+      display: flex;
+      flex-direction: column;
+      background-color: #f8f9fa;
+      border-left: 4px solid #851111;
+      border-radius: 0 5px 5px 0;
+      padding: 10px;
+      flex: 0 0 calc(25% - 15px);
+      min-width: 200px;
+      transition: all 0.3s ease;
+    }
+
+    .category-box:hover {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .category-box h4 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #851111;
+    }
+
+    .category-box a {
+      display: block;
+      margin-top: 5px;
+      color: #007bff;
+      text-decoration: none;
+      margin-top: auto !important;
+    }
+
+    .category-box a:hover {
+      text-decoration: underline;
+    }
+
+    .toc {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 30px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .toc ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .toc li {
+      margin-bottom: 8px;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: #ff0000;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Grid Layout Style (Left-Aligned with Descriptions) */
+    .grid-layout .category-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      /* Responsive grid */
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .grid-layout .category-box {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid-layout .category-box:hover {
+      transform: translateY(-5px);
+      background-color: #fae0e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .grid-layout h3 {
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+
+    .grid-layout .description {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .grid-layout a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #790000;
+      text-decoration: none;
+    }
+
+    .grid-layout a:hover {
+      text-decoration: underline;
+    }
+
+    /* Line-by-Line Layout Style (Left-Aligned with Descriptions) */
+    .line-layout .category-container {
+      display: block;
+      text-align: left;
+    }
+
+    .line-layout .category-box {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .line-layout .category-box:hover {
+      transform: translateY(-5px);
+      background-color: #fae0e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .line-layout h3 {
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+
+    .line-layout .description {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .line-layout a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #790000;
+      text-decoration: none;
+    }
+
+    .line-layout a:hover {
+      text-decoration: underline;
+    }
+
+    /* New styles for search and filter functionality */
+    .search-filter-container {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .search-container {
+      margin-bottom: 20px;
+    }
+
+    .search-container input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .filter-button {
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .filter-button.active {
+      background-color: #851111;
+      color: white;
+      border-color: #851111;
+    }
+
+    .filter-title {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #851111;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      margin: 20px 0;
+      color: #851111;
+      font-weight: bold;
+      display: none;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  }
+</style>
+<div class="seawulf">
+  <div class="header-banner">
+    <h1>SeaWulf Documentation</h1>
+  </div>
+  <!-- Search and Filter Section -->
+
+  <div class="search-filter-container" id="all">
+    <div class="search-container"><input autocomplete="off" id="software-search" placeholder="Search documentation..."
+        type="text" /></div>
+
+    <div class="filter-container"><span class="filter-title">Filter by category:</span><button
+        class="filter-button active" data-category="all">All</button><button class="filter-button"
+        data-category="getting-started">Getting Started</button><button class="filter-button"
+        data-category="access-accounts">Access &amp; Accounts</button><button class="filter-button"
+        data-category="architecture">Architecture</button><button class="filter-button"
+        data-category="jobs">Jobs</button><button class="filter-button" data-category="storage">Storage</button><button
+        class="filter-button" data-category="software">Software</button><button class="filter-button"
+        data-category="policies">Policies</button><button class="filter-button" data-category="ondemand">Open
+        OnDemand</button></div>
+  </div>
+
+  <div class="no-results">
+    <h3>No documentation matches your search criteria.</h3>
+
+    <p>Try a different search term or filter.</p>
+  </div>
+  <!-- Getting Started -->
+
+  <div class="software-group grid-layout" data-category="getting-started">
+    <h2 id="getting-started">Getting Started</h2>
+
+    <div class="category-container">
+      <div class="category-box">
+        <h4>Quick Start Guide</h4>
+
+        <p class="description">Essential information to get you started with SeaWulf quickly.</p>
+        <a href="/HPC/docs/getting-started/quick-start">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Cluster Overview</h4>
+
+        <p class="description">A high-level description of the SeaWulf cluster and its capabilities.</p>
+        <a href="/HPC/docs/getting-started/cluster-overview">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Glossary of Terms</h4>
+
+        <p class="description">Definitions of common HPC and SeaWulf-specific terminology.</p>
+        <a href="/HPC/docs/getting-started/glossary">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>HPC Cheat Sheet</h4>
+
+        <p class="description">A quick reference guide for common commands and operations.</p>
+        <a href="/HPC/docs/getting-started/cheat-sheet">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <!-- Access and Accounts -->
+
+  <div class="software-group grid-layout" data-category="access-accounts">
+    <h2 id="access-accounts">Cluster Access and Accounts</h2>
+
+    <div class="category-container">
+      <div class="category-box">
+        <h4>Requesting Accounts &amp; Project Numbers</h4>
+
+        <p class="description">How to request access to SeaWulf and get project allocations.</p>
+        <a href="/HPC/docs/accounts/requesting">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>DUO Authentication</h4>
+
+        <p class="description">Setting up and using two-factor authentication for secure access.</p>
+        <a href="/HPC/docs/accounts/duo">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Connecting to the Cluster</h4>
+
+        <p class="description">How to connecting to SeaWulf using SSH, MobaXterm, Open OnDemand and other remote access tools.</p>
+        <a href="/HPC/docs/accounts/connecting">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>SSH Basics</h4>
+
+        <p class="description">How to connect to SeaWulf using Secure Shell (SSH).</p>
+        <a href="/HPC/docs/accounts/ssh-basics">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Passwordless SSH</h4>
+
+        <p class="description">Set up SSH keys for secure, password-free login.</p>
+        <a href="/HPC/docs/accounts/passwordless-ssh">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>X11 Forwarding</h4>
+
+        <p class="description">How to run graphical applications on SeaWulf and display them locally.</p>
+        <a href="/HPC/docs/accounts/x11-forwarding">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <!-- Architecture -->
+
+  <div class="software-group grid-layout" data-category="architecture">
+    <h2 id="architecture">Cluster Architecture &amp; Resources</h2>
+
+    <div class="category-container">
+      <div class="category-box">
+        <h4>SeaWulf Architecture Overview</h4>
+
+        <p class="description">The overall design and capabilities of the SeaWulf cluster.</p>
+        <a href="/HPC/docs/architecture/overview">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Nodes &amp; Paritions (Queues)</h4>
+
+        <p class="description">Node types grouped into partitions by core count, memory, and use case, allowing users to match resources to their workload requirements.</p>
+        <a href="/HPC/docs/architecture/queues">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Login Nodes</h4>
+
+        <p class="description">Details about the login nodes and their appropriate use.</p>
+        <a href="/HPC/docs/architecture/login-nodes">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>28-core Haswell Nodes</h4>
+
+        <p class="description">Specifications and best use cases for Haswell compute nodes.</p>
+        <a href="/HPC/docs/architecture/haswell-nodes">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>40-core Skylake Nodes</h4>
+
+        <p class="description">Specifications and best use cases for Skylake compute nodes.</p>
+        <a href="/HPC/docs/architecture/skylake-nodes">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>96-core Milan Nodes</h4>
+
+        <p class="description">Specifications and best use cases for AMD Milan compute nodes.</p>
+        <a href="/HPC/docs/architecture/milan-nodes">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Shared Nodes</h4>
+
+        <p class="description">Information about shared compute resources and how to use them.</p>
+        <a href="/HPC/docs/architecture/shared-nodes">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>GPU Nodes</h4>
+
+        <p class="description">Details on GPU-accelerated compute nodes and their capabilities.</p>
+        <a href="/HPC/docs/architecture/gpu-nodes">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>HBM/Xeonmax Nodes</h4>
+
+        <p class="description">Information about high-bandwidth memory nodes and their use cases.</p>
+        <a href="/HPC/docs/architecture/hbm-xeonmax">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <!-- Jobs -->
+
+  <div class="software-group grid-layout" data-category="jobs">
+    <h2 id="jobs">Job Scheduling &amp; Resource Management</h2>
+
+    <div class="category-container">
+      <div class="category-box">
+        <h4>SLURM Overview</h4>
+
+        <p class="description">Introduction to the SLURM workload manager used on SeaWulf.</p>
+        <a href="/HPC/docs/jobs/slurm-overview">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>SBATCH Script Layout</h4>
+
+        <p class="description">How to structure job submission scripts for optimal results.</p>
+        <a href="/HPC/docs/jobs/sbatch-layout">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Interactive Jobs</h4>
+
+        <p class="description">Running interactive sessions on compute nodes for development.</p>
+        <a href="/HPC/docs/jobs/interactive">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Example Jobs</h4>
+
+        <p class="description">Sample job scripts for various types: MPI, OpenMP, GPU, and multi-node jobs.</p>
+        <a href="/HPC/docs/jobs/examples">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Job Dependencies and Directives</h4>
+
+        <p class="description">Creating job workflows and using advanced SLURM directives.</p>
+        <a href="/HPC/docs/jobs/dependencies">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Canceling and Modifying Jobs</h4>
+
+        <p class="description">How to manage jobs after they've been submitted.</p>
+        <a href="/HPC/docs/jobs/manage-jobs">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Monitoring Jobs</h4>
+
+        <p class="description">Tools and commands for tracking job status and performance.</p>
+        <a href="/HPC/docs/jobs/monitoring">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <!-- Storage -->
+
+  <div class="software-group grid-layout" data-category="storage">
+    <h2 id="storage">Storage and File Transfer</h2>
+
+    <div class="category-container">
+      <div class="category-box">
+        <h4>File Storage Layout</h4>
+
+        <p class="description">Overview of the storage systems available on SeaWulf.</p>
+        <a href="/HPC/docs/storage/layout">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>User Storage</h4>
+
+        <p class="description">Information about home directories and user-specific storage.</p>
+        <a href="/HPC/docs/storage/user">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Scratch Space</h4>
+
+        <p class="description">Using high-performance temporary storage for computations.</p>
+        <a href="/HPC/docs/storage/scratch">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Project Spaces</h4>
+
+        <p class="description">Shared storage for research groups and collaborative projects.</p>
+        <a href="/HPC/docs/storage/project">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>File Transfer with rsync, scp, sftp</h4>
+
+        <p class="description">Command-line tools for transferring data to and from SeaWulf.</p>
+        <a href="/HPC/docs/storage/transfer-cli">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Globus File Transfer</h4>
+
+        <p class="description">Using Globus for reliable, high-performance data transfers.</p>
+        <a href="/HPC/docs/storage/globus">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>CIFS Access</h4>
+
+        <p class="description">Mounting SeaWulf storage on your local computer (RPX and General).</p>
+        <a href="/HPC/docs/storage/cifs">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <!-- Software Management -->
+
+  <div class="software-group grid-layout" data-category="software">
+    <h2 id="software">Software Management</h2>
+
+    <div class="category-container">
+      <div class="category-box">
+        <h4>Using Modules</h4>
+
+        <p class="description">How to load and use software installed on the cluster.</p>
+        <a href="/HPC/docs/software/modules">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Managing Your Own Software</h4>
+
+        <p class="description">Best practices for installing and managing your own software.</p>
+        <a href="/HPC/docs/software/custom-installs">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Conda Environments</h4>
+
+        <p class="description">Creating and using Conda environments for reproducible research.</p>
+        <a href="/HPC/docs/software/conda">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Pip vs Conda Tips</h4>
+
+        <p class="description">Choosing between package managers and avoiding common pitfalls.</p>
+        <a href="/HPC/docs/software/pip-conda">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Installing from Source</h4>
+
+        <p class="description">Guidelines for compiling and installing software from source code.</p>
+        <a href="/HPC/docs/software/source-install">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <!-- Policies -->
+
+  <div class="software-group grid-layout" data-category="policies">
+    <h2 id="policies">Usage Policies and Best Practices</h2>
+
+    <div class="category-container">
+      <div class="category-box">
+        <h4>General Usage Guidelines</h4>
+
+        <p class="description">Policies and expectations for cluster usage.</p>
+        <a href="/HPC/docs/policies/guidelines">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Login Node Etiquette</h4>
+
+        <p class="description">Appropriate use of login nodes and resource limitations.</p>
+        <a href="/HPC/docs/policies/login-etiquette">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Node Utilization</h4>
+
+        <p class="description">Best practices for efficient use of compute resources.</p>
+        <a href="/HPC/docs/policies/utilization">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Fairshare and Job Priority Tips</h4>
+
+        <p class="description">Understanding job scheduling priorities and maximizing throughput.</p>
+        <a href="/HPC/docs/policies/fairshare">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>When to Ask for Help</h4>
+
+        <p class="description">How to troubleshoot issues and get assistance from support staff.</p>
+        <a href="/HPC/docs/policies/help">Learn More</a>
+      </div>
+    </div>
+  </div>
+  <!-- Open OnDemand -->
+
+  <div class="software-group grid-layout" data-category="ondemand">
+    <h2 id="ondemand">Open OnDemand</h2>
+
+    <div class="category-container">
+      <div class="category-box">
+        <h4>Overview of Open OnDemand</h4>
+
+        <p class="description">Introduction to the web-based portal for accessing HPC resources.</p>
+        <a href="/HPC/docs/ondemand/overview">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Using Jupyter</h4>
+
+        <p class="description">Running Jupyter notebooks on SeaWulf through the the Open OnDemand web interface.</p>
+        <a href="/HPC/docs/ondemand/jupyter">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Using RStudio</h4>
+
+        <p class="description">Using RStudio Server for R analysis through the Open OnDemand web interface.</p>
+        <a href="/HPC/docs/ondemand/rstudio">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Using Matlab</h4>
+
+        <p class="description">Running Matlab through the Open OnDemand web interface.</p>
+        <a href="/HPC/docs/ondemand/matlab">Learn More</a>
+      </div>
+
+      <div class="category-box">
+        <h4>Using Code Server</h4>
+
+        <p class="description">Running VS Code in your browser on SeaWulf compute resources.</p>
+        <a href="/HPC/docs/ondemand/code-server">Learn More</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Existing code references
+    const searchInput = document.getElementById('software-search');
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const softwareGroups = document.querySelectorAll('.software-group');
+    const categoryBoxes = document.querySelectorAll('.category-box');
+    const noResultsMessage = document.querySelector('.no-results');
+
+    // Flag to determine if we should scroll
+    let shouldScroll = true;
+
+    // Function to handle URL hash changes
+    function handleHashChange() {
+      // Get the hash without the '#' character
+      const hash = window.location.hash.substring(1);
+
+      if (hash) {
+        // Find the button with matching data-category
+        const targetButton = document.querySelector(`.filter-button[data-category="${hash}"]`);
+
+        if (targetButton) {
+          // Remove active class from all buttons
+          filterButtons.forEach(btn => {
+            btn.classList.remove('active');
+          });
+
+          // Add active class to target button
+          targetButton.classList.add('active');
+
+          // Filter software based on new active button
+          filterSoftware();
+
+          // Only scroll if the flag is true (initially true or when clicking a hash link)
+          // But not when manually clicking filter buttons
+          if (shouldScroll) {
+            const section = document.getElementById(hash);
+            if (section) {
+              section.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+
+          // Reset flag to true for next hash change
+          shouldScroll = true;
+        }
+      }
+    }
+
+    // Function to filter software based on search term and active category
+    function filterSoftware() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const activeCategory = document.querySelector('.filter-button.active').dataset.category;
+
+      let visibleItems = 0;
+
+      // Hide all software groups first, except when showing all
+      if (activeCategory !== 'all') {
+        softwareGroups.forEach(group => {
+          group.classList.add('hidden');
+        });
+
+        // Show only the selected category groups
+        document.querySelectorAll(`.software-group[data-category="${activeCategory}"]`).forEach(group => {
+          group.classList.remove('hidden');
+        });
+      } else {
+        // Show all groups for 'all' category
+        softwareGroups.forEach(group => {
+          group.classList.remove('hidden');
+        });
+      }
+
+      // Now filter by search term
+      categoryBoxes.forEach(box => {
+        const title = box.querySelector('h4').textContent.toLowerCase();
+        const description = box.querySelector('.description').textContent.toLowerCase();
+        const isVisible = (title.includes(searchTerm) || description.includes(searchTerm));
+
+        if (isVisible) {
+          box.classList.remove('hidden');
+          visibleItems++;
+        } else {
+          box.classList.add('hidden');
+        }
+      });
+
+      // Check if any group is now empty and hide it
+      softwareGroups.forEach(group => {
+        const visibleBoxes = group.querySelectorAll('.category-box:not(.hidden)');
+        if (visibleBoxes.length === 0 && !group.classList.contains('hidden')) {
+          group.classList.add('hidden');
+        }
+      });
+
+      // Show/hide no results message
+      if (visibleItems === 0) {
+        noResultsMessage.style.display = 'block';
+      } else {
+        noResultsMessage.style.display = 'none';
+      }
+    }
+
+    // Event listener for search input
+    searchInput.addEventListener('input', filterSoftware);
+
+    // Event listeners for filter buttons
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function () {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+        });
+
+        // Add active class to clicked button
+        this.classList.add('active');
+
+        // When clicking a filter button directly, we don't want to auto-scroll
+        shouldScroll = false;
+
+        // Update the URL hash without triggering a scroll
+        const category = this.dataset.category;
+        if (category === 'all') {
+          // Remove hash for "all" category
+          history.pushState("", document.title, window.location.pathname + window.location.search);
+        } else {
+          // Use pushState to avoid triggering a hashchange event
+          history.pushState(null, null, '#' + category);
+        }
+
+        // Filter software
+        filterSoftware();
+      });
+    });
+
+    // Add event listener for internal anchor links that have hash values
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href').substring(1);
+
+        // Only intercept if it's a category we have a filter for
+        const matchingButton = document.querySelector(`.filter-button[data-category="${targetId}"]`);
+        if (matchingButton) {
+          e.preventDefault();
+
+          // We want to scroll when clicking a hash link
+          shouldScroll = true;
+          window.location.hash = targetId;
+        }
+      });
+    });
+
+    // Handle hash on page load
+    handleHashChange();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', handleHashChange);
+  });
+</script>

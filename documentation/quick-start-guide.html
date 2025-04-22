@@ -1,0 +1,583 @@
+<style>
+  .seawulf {
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    ul li {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      margin: 0 auto;
+    }
+
+    .header-banner {
+      background-color: #851111;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+    }
+
+    .header-banner h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .info-card {
+      background-color: #f8f9fa;
+      border-left: 4px solid #851111;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+
+    h2 {
+      color: #851111;
+      border-left: 4px solid #851111;
+      padding-left: 10px;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .section h3 {
+      color: #851111;
+      margin-top: 25px;
+      font-size: 20px;
+    }
+
+    .command {
+      font-family: 'Courier New', monospace;
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      border-left: 3px solid #851111;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+
+    .code {
+      font-family: 'Courier New', monospace;
+      overflow-x: auto;
+      margin: 10px 0;
+    }
+
+    .command-description {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+
+    .login-nodes {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      margin: 10px 0;
+    }
+
+    .login-node {
+      border-radius: 5px;
+      padding: 8px;
+    }
+
+    .login-node.yellow {
+      background-color: #f6f7e9;
+      border: 1px solid #f0efd1;
+    }
+
+    .login-node.orange {
+      background-color: #f0e5d1;
+      border: 1px solid #f0e4d1;
+    }
+
+    .login-node p {
+      color: #222;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .login-node span {
+      display: block;
+      font-size: 14px;
+      color: #333;
+      margin-top: 5px;
+    }
+
+    .note-box {
+      background-color: #fff8e1;
+      border-left: 4px solid #ffc107;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    .warning-box {
+      background-color: #ffebee;
+      border-left: 4px solid #f44336;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 0 5px 5px 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #851111;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .software-group {
+      margin-bottom: 30px;
+    }
+
+    .software-card {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 15px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .software-card:hover {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .software-card h4 {
+      color: #851111;
+      margin-top: 0;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 8px;
+    }
+
+    .module-command {
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 5px;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .category-header i {
+      font-size: 24px;
+      margin-right: 10px;
+      color: #851111;
+    }
+
+    .category-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    .category-box {
+      display: flex;
+      flex-direction: column;
+      background-color: #f8f9fa;
+      border-left: 4px solid #851111;
+      border-radius: 0 5px 5px 0;
+      padding: 10px;
+      flex: 0 0 calc(25% - 15px);
+      min-width: 200px;
+      transition: all 0.3s ease;
+    }
+
+    .category-box:hover {
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .category-box h4 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      color: #851111;
+    }
+
+    .category-box a {
+      display: block;
+      margin-top: 5px;
+      color: #007bff;
+      text-decoration: none;
+      margin-top: auto !important;
+    }
+
+    .category-box a:hover {
+      text-decoration: underline;
+    }
+
+    .toc {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-bottom: 30px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    .toc ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .toc li {
+      margin-bottom: 8px;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: #ff0000;
+    }
+
+    .toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* Grid Layout Style (Left-Aligned with Descriptions) */
+    .grid-layout .category-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      /* Responsive grid */
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .grid-layout .category-box {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .grid-layout .category-box:hover {
+      transform: translateY(-5px);
+      background-color: #fae0e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .grid-layout h3 {
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+
+    .grid-layout .description {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .grid-layout a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #790000;
+      text-decoration: none;
+    }
+
+    .grid-layout a:hover {
+      text-decoration: underline;
+    }
+
+    /* Line-by-Line Layout Style (Left-Aligned with Descriptions) */
+    .line-layout .category-container {
+      display: block;
+      text-align: left;
+    }
+
+    .line-layout .category-box {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .line-layout .category-box:hover {
+      transform: translateY(-5px);
+      background-color: #fae0e0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .line-layout h3 {
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+
+    .line-layout .description {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .line-layout a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      color: #790000;
+      text-decoration: none;
+    }
+
+    .line-layout a:hover {
+      text-decoration: underline;
+    }
+
+    /* New styles for search and filter functionality */
+    .search-filter-container {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .search-container {
+      margin-bottom: 20px;
+    }
+
+    .search-container input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .filter-button {
+      background-color: #f0f0f0;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .filter-button.active {
+      background-color: #851111;
+      color: white;
+      border-color: #851111;
+    }
+
+    .filter-title {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #851111;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      background-color: #f8f9fa;
+      border-radius: 5px;
+      margin: 20px 0;
+      color: #851111;
+      font-weight: bold;
+      display: none;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  }
+</style>
+<div class="seawulf">
+  <div class="header-banner">
+    <h1>SeaWulf Quick Start Guide</h1>
+  </div>
+
+  <div class="info-card">
+    <p>The SeaWulf cluster is a collection of interconnected computers, known as nodes, designed to support
+      computationally intensive tasks. Access to the SeaWulf cluster is restricted. All accounts must be created under
+      official SeaWulf projects, which can only be requested by Stony Brook faculty. If you do not currently have
+      access, please refer to the page:</p>
+    <p><a href="#" style="color: #851111; font-weight: bold;">Creating SeaWulf Accounts and Projects</a></p>
+  </div>
+
+  <div class="section">
+    <p>Once your SeaWulf account has been created, the next step is to connect to the cluster. This can be done through
+      an SSH connection or by using the Open OnDemand web interface. In this quick start guide, we'll focus on
+      connecting via SSH.</p>
+
+    <p>All users connect to a set of login nodes, where they can design scripts and prepare jobs before submitting them
+      to the compute nodes.</p>
+
+    <p>The login node you connect to determines which compute nodes you can access.</p>
+
+    <p>This relationship is visualized in the following page:</p>
+
+    <p><a href="#" style="color: #851111; font-weight: bold;">SeaWulf Architecture</a></p>
+
+    <p>For the purposes of this guide, we'll connect to the Milan login nodes.</p>
+  </div>
+
+  <div class="section">
+    <h2>Mac/Linux</h2>
+    <p>On Mac or Linux systems, you can connect using the terminal. Run the following command:</p>
+
+    <div class="command">ssh -Y &lt;NetID&gt;@milan.seawulf.stonybrook.edu</div>
+
+    <div class="command-description">
+      <p>The <code>-Y</code> flag enables X11 forwarding, which allows GUI applications to display on your local
+        machine. If you're on a Mac, you'll need to have XQuartz installed. For more information, see:</p>
+      <p><a href="#" style="color: #851111; font-weight: bold;">Setting up X11 Forwarding</a></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Windows</h2>
+    <p>While SSH is available through Windows PowerShell, many users prefer the GUI application
+      <strong>MobaXterm</strong> to manage SSH sessions (as well as other session types).</p>
+
+    <div class="note-box">
+      <p><em>Insert image of correct SSH settings</em></p>
+    </div>
+
+    <p>More information can be found on the page:</p>
+    <p><a href="#" style="color: #851111; font-weight: bold;">Connecting to SeaWulf</a></p>
+  </div>
+
+  <div class="section">
+    <h2>File System</h2>
+    <p>When you log in, the <code>pwd</code> command will show that you're in your home directory. This is a personal
+      20GB space, backed up regularly, where you can store files, download software, and manage personal configurations.
+      More details can be found in:</p>
+    <p><a href="#" style="color: #851111; font-weight: bold;">SeaWulf Filesystem</a></p>
+
+    <p>In addition to the home directory, you have access to a <strong>20TB project scratch space</strong> located at:
+    </p>
+
+    <div class="command">/gpfs/scratch/&lt;NetID&gt;</div>
+
+    <p>This space is for temporary storage — files are automatically deleted after 30 days. For more information, refer
+      to:</p>
+    <p><a href="#" style="color: #851111; font-weight: bold;">Scratch Space</a></p>
+  </div>
+
+  <div class="section">
+    <h2>Module System</h2>
+    <p>While you can install software locally, much of what you need has already been installed on the cluster. To
+      manage this large and diverse software environment, SeaWulf uses a <strong>module system</strong>.</p>
+
+    <p>This allows users to load only the software they need, depending on the architecture of the nodes they're working
+      on.</p>
+
+    <p>You can check for available modules with:</p>
+
+    <div class="command">module avail</div>
+
+    <p>To load a module:</p>
+
+    <div class="command">module load &lt;module-name&gt;</div>
+
+    <p>We'll go over a sample use case in this guide.</p>
+  </div>
+
+  <div class="section">
+    <h2>Job Scheduling</h2>
+    <p>Once you've set up your environment, the next step is to request compute resources. As mentioned earlier, login
+      nodes are shared by many users and are not intended for running intensive jobs.</p>
+
+    <p>SeaWulf uses the <strong>SLURM job manager</strong> for scheduling work on compute nodes.</p>
+
+    <p>SLURM organizes the compute nodes into <strong>partitions</strong> (also called <strong>queues</strong>), each
+      with its own constraints. For details, visit:</p>
+    <p><a href="#" style="color: #851111; font-weight: bold;">Node Types and Partitions</a></p>
+
+    <p>You can request an interactive session using the <code>srun</code> command. For example:</p>
+
+    <div class="command">srun -p short-40core -N 1 -n 40 -t 1:00:00 --pty bash</div>
+
+    <p>Each flag has a specific meaning — see:</p>
+    <p><a href="#" style="color: #851111; font-weight: bold;">SLURM Basics</a></p>
+
+    <p>Alternatively, you can write a script using <code>#SBATCH</code> directives and submit it with the
+      <code>sbatch</code> command. For example:</p>
+
+    <div class="command">sbatch example.slurm</div>
+
+    <p>More info about script structure can be found here:</p>
+    <p><a href="#" style="color: #851111; font-weight: bold;">SLURM Scripts</a></p>
+  </div>
+
+  <div class="section">
+    <h2>Monitoring Jobs</h2>
+    <p>After submitting a job, you can monitor it using:</p>
+
+    <div class="command">squeue</div>
+
+    <p>This will show job status. If your job is marked <strong>PENDING</strong>, it's waiting for available resources.
+      Wait time depends on job size, queue limits, and cluster usage.</p>
+
+    <div class="note-box">
+      <p><em>Insert example squeue output image</em></p>
+    </div>
+  </div>
+
+  <div class="section" style="border-bottom: none;">
+    <p>This guide outlines the basics of using the SeaWulf cluster, but there's still much more to explore. Please refer
+      to the rest of our documentation to deepen your understanding. And if you ever run into an issue, need
+      clarification, or just want help getting started, feel free to reach out through our:</p>
+
+    <p><a href="#" style="color: #851111; font-weight: bold;">Ticketing System</a></p>
+  </div>
+</div>

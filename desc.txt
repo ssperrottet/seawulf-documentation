@@ -1,0 +1,48 @@
+Understanding SeaWulf's Hardware
+
+SeaWulf is a high-performance computational cluster that integrates state-of-the-art components from leading technology providers such as AMD, Dell, HPE, IBM, Intel, and Nvidia. Its name is derived from a combination of "Seawolf" and "Beowulf," referencing one of the first high-performance computing clusters.
+
+The cluster consists of over 400 nodes and approximately 23,000 cores, delivering a peak performance of around 1.86 PFLOP/s for research computations. The nodes are interconnected via high-speed InfiniBand® (IB) networks by Nvidia®, enabling data transfer speeds ranging from 5 to 50 gigabytes per second.
+
+Compute Nodes
+
+164 compute nodes from Penguin Computing: Each equipped with two Intel Xeon E5-2683v3 CPUs ("Haswell"), offering 14 cores per CPU at a base speed of 2.0 GHz on an FDR InfiniBand network. 8 of these nodes contain GPUs, specifically:
+
+28 Nvidia Tesla K80 24GB Accelerators, totaling 159,744 CUDA cores (64x GK210 cores).
+
+One node with 2 Tesla P100 GPUs.
+
+One node with 2 Tesla V100 GPUs.
+
+Each node has 128 GB of DDR4 RAM (20 GB reserved for the system) with a combined memory bandwidth of 133.25 GB/s.
+
+64 compute nodes from Dell: Each with two Intel Xeon Gold 6148 CPUs ("Skylake"), offering 20 cores per CPU at a base speed of 2.4 GHz and 192 GB of RAM, connected via an FDR InfiniBand network.
+
+48 compute nodes from HPE: Each equipped with two AMD 7643 CPUs ("Milan"), featuring 48 cores per CPU at a base speed of 3.2 GHz and 256 GB of RAM, connected via an HDR100 InfiniBand network.
+
+11 GPU compute nodes from Dell: Each featuring 4x Nvidia A100 80GB GPUs and two Intel 6338 CPUs ("Ice Lake") with 32 cores per CPU at a base speed of 2.0 GHz and 256 GB of RAM, connected via an HDR100 InfiniBand network.
+
+94 compute nodes from HPE: Each equipped with two Intel Xeon Max 9468 CPUs ("Sapphire Rapids w/ HBM"), offering 48 cores per CPU at a base speed of 2.6 GHz, with 256 GB of DDR5 RAM plus 128 GB of HBM2 RAM, connected via an NDR InfiniBand network.
+
+Large Memory Nodes
+
+SeaWulf also features two large memory nodes with 3 TB of RAM:
+
+DDR4 System: 4 Intel E7-8870v3 processors, each with 18 cores at 2.1 GHz, for a total of 72 cores and 144 threads (via Hyper-Threading).
+
+DDR5 System: 4 Intel 8360H processors, each with 24 cores at 3.0 GHz, for a total of 96 cores.
+
+Storage System
+
+SeaWulf's storage infrastructure is built on a GPFS storage solution, offering a total capacity of approximately 4 petabytes of SAS spinning disk and 50 terabytes of SSD. The SSD component provides exceptional performance, capable of sustaining over 4 million 4K random read IOPS and achieving sequential read speeds exceeding 36 gigabytes per second.
+
+Connectivity
+
+SeaWulf features five login nodes for user access and task management. The nodes are interconnected via high-speed InfiniBand® networks by Nvidia®, supporting data transfer speeds of 5-50 GB/s.
+
+Performance Calculation
+
+Peak Performance: Cores per node × number of nodes × base clock per core × double precision FLOPS per cycle + Nvidia GPU Teraflops.
+
+Memory Bandwidth Calculation: Memory Clock (1,066 MHz) × 2 (DDR) × 64-bit Memory Bus width × 4 Memory interfaces per CPU (Quad-channel) × 2 CPUs per node / 8 bits per byte.
+
